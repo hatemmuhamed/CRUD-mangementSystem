@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Road+Rage&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/70a5a28358a0f80718ac4f6737f018ae.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container mt-5 ">
+        <h1 class="head-name">CRUD System Mangement</h1>
+    <div class="styleForm">
+        <label for="nameProduct">Name Product: </label>
+        <input class="mb-2 form-control" type="text" id="nameProduct">
+        <div class="d-none alert alert-danger" id="alertName">
+            <p>Name must be first letter Capital <br>
+                Min character 3 and Max character 8 <br>
+                Not start any (^ - & - * - # - @ - ! )
+            </p>
+        </div>
+        <label for="priceProduct">Price: </label>
+        <input class="mb-2 form-control" type="number" id="priceProduct">
+        <div class="alert alert-danger d-none" id="alertPrice">
+            <p>Price must from 10 to 79</p>
+        </div>
+        <label for="nameCategory">Category: </label>
+        <input class="mb-2 form-control" type="text" id="nameCategory">
+        <div class="alert alert-danger d-none" id="alertCategory">
+            <p>Category must characters from 4 to 9 </p>
+        </div>
+        <label for="desc">Describtion: </label>
+        <textarea class="form-control mb-2" id="desc"></textarea>      
+        <button id="addBtn" onclick="addProduct();" class="btn btn-info mb-3">Add Product</button>
+    </div>
+    </div>
+    <div class="container mx-auto my-4">
+        <div class="row">
+            <div class="col-lg-12 col-md-8 ">
+                <div class="search-bar d-flex justify-content-between ">
+                    <input type="search" onkeyup="searchProduct()" class="form-control text-center w-40 mb-4" id="btnSearch" placeholder="Search here by name...">
+                    <input type="search" onkeyup="searchCategory()" class="form-control text-center w-40 mb-4 ms-5" id="btnCategory" placeholder="Search here by category...">
+                </div>
+                <div class="table-style">
+                    <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>index</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody" class="table-group-divider">
+                    </tbody>
+                </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
