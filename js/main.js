@@ -38,9 +38,11 @@ function addProduct()
             localStorage.setItem("Products" , JSON.stringify(productsContainer));
             displayProduct();
             clearData();
+            closeValid();
         }
         else{
             updateProduct();
+            closeValid();
         }
 }
 else{
@@ -176,7 +178,7 @@ function validateForm(){
     return true;
 }
 
-nameProduct.addEventListener('blur', function(errorName){
+nameProduct.addEventListener('blur', function(){
     var regexName =/^[A-Z][a-z]{3,8}$/;
     if(regexName.test(nameProduct.value)==true){
         nameProduct.classList.add('is-valid')
@@ -222,3 +224,9 @@ nameCategory.addEventListener('blur', function(){
     }
 })
 
+
+function closeValid(){
+            nameProduct.classList.remove('is-valid')
+            priceProduct.classList.remove('is-valid')
+            nameCategory.classList.remove('is-valid')
+}
